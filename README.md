@@ -22,6 +22,7 @@ Backend Validation: A robust Node.js/Express server evaluates user-submitted cod
 
 
 
+
 Technical Stack 🛠️
 
 Frontend:
@@ -51,6 +52,7 @@ vm (Node.js built-in): For sandboxed code execution, crucial for safely evaluati
 Data:
 
 riddles.json: JSON file storing all the riddle data, buggy code, and expected outputs for each level. 📊
+
 
 
 
