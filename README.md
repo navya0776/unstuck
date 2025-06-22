@@ -80,8 +80,11 @@ Reset: If you get stuck or want to start over on a level, click the "Reset" butt
 *Dependencies:*
 
 `express`: A fast, unopinionated, minimalist web framework for Node.js.
+
 `cors`: A Node.js package for providing a Connect/Express middleware that can be used to enable Cross-Origin Resource Sharing (CORS) with various options.
+
 `body-parser`: A Node.js middleware for parsing incoming request bodies in a middleware before your handlers, available under the req.body property.
+
 
 *Future Enhancements*✨
 
