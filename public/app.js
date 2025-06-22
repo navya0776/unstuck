@@ -60,7 +60,9 @@ function loadLevel(levelId) {
         return;
     }
 
-    fetch(`http://localhost:5000/api/riddle/${levelId}`)
+
+
+    fetch(`http://localhost:5000/get-level/${levelId}`)
         .then(res => {
             if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
             return res.json();
@@ -91,28 +93,32 @@ function submitSolution() {
     resultBox.textContent = 'Checking solution...';
     resultBox.className = '';
 
-    fetch('http://localhost:5000/api/submit', {
+    fetch('http://localhost:5000/submit-solution', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ index: currentLevel, userCode })
+        body: JSON.stringify({ levelId: currentLevel, userCode })
     })
-        .then(res => res.json())
-        .then(data => {
-            if (data.correct) {
-                resultBox.textContent = data.message;
-                resultBox.className = 'success';
-                document.getElementById('nextBtn').style.display = 'inline-block';
-            } else {
-                resultBox.textContent = data.message || '❌ Incorrect.';
-                resultBox.className = 'fail';
-                document.getElementById('nextBtn').style.display = 'none';
-            }
-        })
-        .catch(error => {
-            console.error("Error submitting solution:", error);
-            resultBox.textContent = `❌ Network Error: ${error.message}`;
+    .then(res => res.json())
+    .then(data => {
+        if (data.status === "success") {
+            resultBox.textContent = "✅ Correct!";
+            resultBox.className = 'success';
+            document.getElementById('nextBtn').style.display = 'inline-block';
+        } else if (data.status === "fail") {
+            resultBox.textContent = (data.output ? `❌ Incorrect.\nYour Output:\n${data.output}` : '❌ Incorrect.');
+            resultBox.className = 'fail';
+            document.getElementById('nextBtn').style.display = 'none';
+        } else {
+            resultBox.textContent = data.message || '❌ Error.';
             resultBox.className = 'error';
-        });
+            document.getElementById('nextBtn').style.display = 'none';
+        }
+    })
+    .catch(error => {
+        console.error("Error submitting solution:", error);
+        resultBox.textContent = `❌ Network Error: ${error.message}`;
+        resultBox.className = 'error';
+    });
 }
 
 function resetCode() {

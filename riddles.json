@@ -4,174 +4,105 @@
         "riddle": "I am defined but never remembered. Who am I?",
         "buggyCode": "function greet() {\n  const name = 'Alex';\n  return 'Hello!';\n}",
         "expectedOutput": "Hello, Alex!",
-        "level": "Easy",
-        "answer": "const name = 'Alex'; return 'Hello, ' + name + '!';",
-        "answerIncludes": [
-            "Alex",
-            "Hello"
-        ]
+        "level": "Easy"
+
     },
     {
         "id": 2,
         "riddle": "I'm a collection of items, ordered and indexed, yet I am not a string. What am I?",
         "buggyCode": "const data = 'apple,banana,orange';\nconsole.log(data[1]);",
         "expectedOutput": "a",
-        "level": "Easy",
-        "answer": "const data = ['apple','banana','orange']; console.log(data[0][1]);",
-        "answerIncludes": [
-            "[",
-            "apple",
-            "banana"
-        ]
+        "level": "Easy"
     },
     {
         "id": 3,
         "riddle": "I repeat a block of code until a condition is met. What am I?",
         "buggyCode": "let i = 0;\nwhile (i > 3) {\n  console.log(i);\n  i++;\n}",
         "expectedOutput": "\n0\n1\n2",
-        "level": "Easy",
-        "answer": "let i = 0;\nwhile (i < 3) {\n  console.log(i);\n  i++;\n}",
-        "answerIncludes": [
-            "i++",
-            "i < 3"
-        ]
+        "level": "Easy"
     },
     {
         "id": 4,
         "riddle": "I control the flow of execution, deciding what code runs based on a condition. What am I?",
         "buggyCode": "const age = 17;\nif (age >= 18) {\n  console.log('Adult');\n}  if (age < 18) {\n  console.log('Minor');\n}",
         "expectedOutput": "Minor",
-        "level": "Easy",
-        "answer": "const age = 17;\nif (age < 18) {\n  console.log('Minor');\n}",
-        "answerIncludes": [
-            "Minor"
-        ]
+        "level": "Easy"
     },
     {
         "id": 5,
         "riddle": "I hold a value, but I'm not a number or a string. When I'm not true, I'm false. What am I?",
         "buggyCode": "let isValid = 0;\nif (isValid) {\n  console.log('Valid!');\n} else {\n  console.log('Not valid!');\n}",
         "expectedOutput": "Not valid!",
-        "level": "Easy",
-        "answer": "let isValid = false;\nif (isValid) {\n  console.log('Valid!');\n} else {\n  console.log('Not valid!');\n}",
-        "answerIncludes": [
-            "false",
-            "Not valid"
-        ]
+        "level": "Easy"
     },
     {
         "id": 6,
         "riddle": "I can be `true` or `false`, and I help you make decisions in your code. What am I?",
         "buggyCode": "const isRaining = 'yes';\nif (isRaining) {\n  console.log('Take an umbrella');\n} else {\n  console.log('Enjoy the sun');\n}",
         "expectedOutput": "Take an umbrella",
-        "level": "Medium",
-        "answer": "const isRaining = true;\nif (isRaining) {\n  console.log('Take an umbrella');\n}",
-        "answerIncludes": [
-            "umbrella"
-        ]
+        "level": "Medium"
     },
     {
         "id": 7,
         "riddle": "I am a strict comparison, I care about both value and type. What am I?",
         "buggyCode": "console.log(5 == '5');",
         "expectedOutput": "true",
-        "level": "Medium",
-        "answer": "console.log(5 === 5);",
-        "answerIncludes": [
-            "==="
-        ]
+        "level": "Medium"
     },
     {
         "id": 8,
         "riddle": "I represent the absence of value, not zero or an empty string. What am I?",
         "buggyCode": "let value;\nconsole.log(value + 5);",
         "expectedOutput": "NaN",
-        "level": "Medium",
-        "answer": "let value;\nconsole.log(Number(value) + 5); // NaN",
-        "answerIncludes": [
-            "NaN"
-        ]
+        "level": "Medium"
     },
     {
         "id": 9,
         "riddle": "I connect two or more strings together. What am I?",
         "buggyCode": "const firstName = 'John';\nconst lastName = 'Doe';\nconsole.log(firstName - lastName);",
         "expectedOutput": "NaN",
-        "level": "Medium",
-        "answer": "console.log('John' + 'Doe');",
-        "answerIncludes": [
-            "+"
-        ]
+        "level": "Medium"
     },
     {
         "id": 10,
         "riddle": "I can group related data and functions, but I'm not a class. What am I?",
         "buggyCode": "const car = {\n  brand: 'Toyota',\n  start: function() \n    console.log('Engine started');\n  }n};\ncar.start();\ncar.stop();",
         "expectedOutput": "Engine started",
-        "level": "Medium",
-        "answer": "const car = {\n  brand: 'Toyota',\n  start: function() {\n    console.log('Engine started');\n  }\n};\ncar.start();",
-        "answerIncludes": [
-            "start",
-            "Engine"
-        ]
+        "level": "Medium"
     },
     {
         "id": 11,
         "riddle": "I can be called upon, I can return a value, but I am not a variable. What am I?",
         "buggyCode": "const add = (a, b) => {\n  return a + b;\n};\nconsole.log(add(5, '10'));",
         "expectedOutput": "510",
-        "level": "Difficult",
-        "answer": "const add = (a, b) => a + b;\nconsole.log(add(5, '10'));",
-        "answerIncludes": [
-            "add",
-            "510"
-        ]
+        "level": "Difficult"
     },
     {
         "id": 12,
         "riddle": "I iterate over elements in an array, but I'm not a `for` loop. What am I?",
         "buggyCode": "const numbers = [1, 2, 3];\nnumbers.forEach(num => {\n  console.log(num * 2);\n});",
         "expectedOutput": "2\n4\n6",
-        "level": "Difficult",
-        "answer": "const numbers = [1, 2, 3];\nnumbers.forEach(num => console.log(num * 2));",
-        "answerIncludes": [
-            "forEach",
-            "* 2"
-        ]
+        "level": "Difficult"
     },
     {
         "id": 13,
         "riddle": "I'm a declaration that lives throughout the entire script, even before I'm defined. What am I?",
         "buggyCode": "console.log(x);\nvar x = 10;",
         "expectedOutput": "undefined",
-        "level": "Difficult",
-        "answer": "var x;\nconsole.log(x);\nx = 10;",
-        "answerIncludes": [
-            "undefined"
-        ]
+        "level": "Difficult"
     },
     {
         "id": 14,
         "riddle": "I can create new objects from a blueprint. What am I?",
         "buggyCode": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst dog = new Animal('Buddy');\nconsole.log(dog.type);\n",
         "expectedOutput": "undefined",
-        "level": "Difficult",
-        "answer": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst dog = new Animal('Buddy');\nconsole.log(dog.name);",
-        "answerIncludes": [
-            "name",
-            "Buddy"
-        ]
+        "level": "Difficult"
     },
     {
         "id": 15,
         "riddle": "I pause execution until an asynchronous operation completes. What am I?",
         "buggyCode": "function fetchData() {\n  return new Promise(resolve => setTimeout(() => resolve('Data fetched'), 100));\n}\nasync function processData() {\n  const result = fetchData();\n  console.log(result);\n}\nprocessData();",
         "expectedOutput": "Promise { <pending> }",
-        "level": "Difficult",
-        "answer": "async function processData() {\n  const result = await fetchData();\n  console.log(result);\n}\nprocessData();",
-        "answerIncludes": [
-            "await",
-            "fetchData"
-        ]
+        "level": "Difficult"
     }
 ]

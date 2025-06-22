@@ -2,54 +2,66 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 const bodyParser = require("body-parser");
-const cors = require('cors');
+const cors = require("cors");
+const vm = require("vm"); 
 
-const app = express(); 
-app.use(cors());       
-
+const app = express();
 const PORT = process.env.PORT || 5000;
 
-
+app.use(cors());
 app.use(bodyParser.json());
-app.use(express.static(path.join(__dirname, "public"))); 
-
+app.use(express.static(path.join(__dirname, "public"))); // Serves index.html and static files
 
 const riddles = JSON.parse(fs.readFileSync("riddles.json", "utf8"));
 
+// ✅ GET riddle by index
+app.get("/get-level/:id", (req, res) => {
+  const index = parseInt(req.params.id) - 1;
 
-app.get("/api/riddle/:index", (req, res) => {
-const index = parseInt(req.params.index);
+  if (isNaN(index) || index < 0 || index >= riddles.length) {
+    return res.status(404).json({ error: "Riddle not found" });
+  }
 
-if (index < 0 || index >= riddles.length) {
-return res.status(404).json({ error: "Riddle not found" });
-}
-
-const { correctCode, answerIncludes, ...safeRiddle } = riddles[index]; 
-res.json(safeRiddle);
+  const { id, riddle, buggyCode, expectedOutput, level } = riddles[index];
+  res.json({ id, riddle, buggyCode, expectedOutput, level });
 });
 
-app.post("/api/submit", (req, res) => {
-const { index, userCode } = req.body;
+// ✅ POST code to check answer
+app.post("/submit-solution", (req, res) => {
+  const { levelId, userCode } = req.body;
+  const index = levelId - 1;
 
-const riddle = riddles[index];
-if (!riddle) {
-return res.status(404).json({ error: "Riddle not found" });
-}
+  const riddle = riddles[index];
+  if (!riddle) {
+    return res.status(404).json({ status: "error", message: "Invalid level" });
+  }
 
-const normalize = (str) => str.replace(/\s+/g, "").trim().toLowerCase();
-const isCorrect = riddle.answerIncludes.some((required) =>
-normalize(userCode).includes(required.toLowerCase())
-);
+  let output = "";
+  const sandbox = {
+    console: {
+      log: (...args) => {
+        output += args.join(" ") + "\n";
+      }
+    }
+  };
 
-if (isCorrect) {
-res.json({ correct: true, message: "✅ Correct! Great job." });
-} else {
-res.json({ correct: false, message: "❌ Not quite. Try again!" });
-}
+  try {
+    vm.createContext(sandbox);
+    vm.runInContext(userCode, sandbox);
+
+    // Remove trailing newline
+    output = output.trim();
+
+    if (output === riddle.expectedOutput.trim()) {
+      res.json({ status: "success" });
+    } else {
+      res.json({ status: "fail", output: output });
+    }
+  } catch (err) {
+    res.json({ status: "error", message: err.message });
+  }
 });
-
 
 app.listen(PORT, () => {
-console.log(`🟢 Server running at http://localhost:${PORT}`);
+  console.log(`🟢 Server running at http://localhost:${PORT}`);
 });
-
