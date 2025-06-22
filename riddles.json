@@ -1,0 +1,137 @@
+[
+{
+"id": 1,
+"level": "Easy",
+"riddle": "I’m the smallest and the largest, depending on who you ask. I find the tiniest or the tallest number in your task.",
+"buggyCode": "nums = [2, 5, 1, 8]\nprint(\"Min:\", max(nums))",
+"hint": "You’re asking for the smallest, but using the wrong function.",
+"correctCode": "nums = [2, 5, 1, 8]\nprint(\"Min\":, min(nums))",
+"answerIncludes": ["min("]
+},
+{
+"id": 2,
+"level": "Easy",
+"riddle": "You ask for a greeting, but I stay silent. Maybe my voice was never called.",
+"buggyCode": "def greet():\n print(\"Hello!\")",
+"hint": "The function is defined but never spoken to.",
+"correctCode": "def greet():\n print(\"Hello!\")\n\ngreet()",
+"answerIncludes": ["greet()"]
+},
+{
+"id": 3,
+"level": "Easy",
+"riddle": "I’m half of four, but your math is off, maybe it’s just a typo?",
+"buggyCode": "print(\"Half of 4 is\", 4/))",
+"hint": "Check those parentheses!",
+"correctCode": "print(\"Half of 4 is\", 4/2)",
+"answerIncludes": ["4/2"]
+},
+{
+"id": 4,
+"level": "Easy",
+"riddle": "I loop and loop, but never stop. I’m endless till I’m dropped.",
+"buggyCode": "i = 0\nwhile i < 5:\n print(i)",
+"hint": "You’re missing the key to move forward.",
+"correctCode": "i = 0\nwhile i < 5:\n print(i)\n i += 1",
+"answerIncludes": ["i +=", "i += 1"]
+},
+{
+"id": 5,
+"level": "Easy",
+"riddle": "You tried to join me, but forgot I’m not a number.",
+"buggyCode": "age = 20\nprint(\"You are \" + age + \" years old\")",
+"hint": "You can’t mix strings and integers.",
+"correctCode": "age = 20\nprint(\"You are \" + str(age) + \" years old\")",
+"answerIncludes": ["str("]
+},
+{
+"id": 6,
+"level": "Medium",
+"riddle": "I promise to square, but I don’t return. What’s the point if you don’t give it back?",
+"buggyCode": "def square(x):\n result = x * x\n\nprint(square(4))",
+"hint": "The function does the work but doesn’t tell you.",
+"correctCode": "def square(x):\n return x * x\n\nprint(square(4))",
+"answerIncludes": ["return"]
+},
+{
+"id": 7,
+"level": "Medium",
+"riddle": "I sort by name, not by number, though your code tries otherwise.",
+"buggyCode": "nums = ['10', '5', '3', '7']\nnums.sort()\nprint(\"Sorted:\", nums)",
+"hint": "The code looks okay—but maybe you’re sorting strings instead?",
+"correctCode": "nums = ['10', '5', '3', '7']\nnums = list(map(int, nums))\nnums.sort()\nprint(\"Sorted:\", nums)",
+"answerIncludes": ["map(int", "nums.sort"]
+},
+{
+"id": 8,
+"level": "Medium",
+"riddle": "I vanish in a flash, even when I pass. I was never remembered.",
+"buggyCode": "for i in range(3):\n x = i * 2\nprint(x)",
+"hint": "Works, but not always safe. What if the loop didn’t run?",
+"correctCode": "x = 0\nfor i in range(3):\n x = i * 2\nprint(x)",
+"answerIncludes": ["x =", "for i"]
+},
+{
+"id": 9,
+"level": "Medium",
+"riddle": "You split me open, but forgot where I live.",
+"buggyCode": "print(sentence.split())",
+"hint": "You can’t split something that doesn’t exist.",
+"correctCode": "sentence = \"Riddles are fun\"\nprint(sentence.split())",
+"answerIncludes": ["sentence =", "split"]
+},
+{
+"id": 10,
+"level": "Medium",
+"riddle": "I should be True, but you’re fooled by comparison.",
+"buggyCode": "a = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b is True)",
+"hint": "Chained comparisons don’t work here.",
+"correctCode": "a = [1, 2, 3]\nb = [1, 2, 3]\nprint(a == b)",
+"answerIncludes": ["a == b"]
+},
+{
+"id": 11,
+"level": "Hard",
+"riddle": "I go deep inside myself, until I’m lost.",
+"buggyCode": "def recurse():\n recurse()\n\nrecurse()",
+"hint": "You need a base case to avoid infinite recursion.",
+"correctCode": "def recurse(n):\n if n == 0:\n return\n recurse(n-1)\n\nrecurse(5)",
+"answerIncludes": ["if", "return", "recurse(n-1)"]
+},
+{
+"id": 12,
+"level": "Hard",
+"riddle": "I aim for the center, but miss the mark.",
+"buggyCode": "nums = [1, 2, 3, 4, 5]\nmiddle = len(nums)/2\nprint(nums[middle])",
+"hint": "You can’t index with floats.",
+"correctCode": "nums = [1, 2, 3, 4, 5]\nmiddle = len(nums) // 2\nprint(nums[middle])",
+"answerIncludes": ["//", "nums["]
+},
+{
+"id": 13,
+"level": "Hard",
+"riddle": "I say I copy, but I lie. I just point and spy.",
+"buggyCode": "a = [1, 2, 3]\nb = a\nb.append(4)\nprint(a)",
+"hint": "You need to clone not assign.",
+"correctCode": "a = [1, 2, 3]\nb = a.copy()\nb.append(4)\nprint(a)",
+"answerIncludes": ["copy()"]
+},
+{
+"id": 14,
+"level": "Hard",
+"riddle": "You try to open me, but I’m not there.",
+"buggyCode": "with open(\"data.txt\", \"r\") as f:\n print(f.read())",
+"hint": "File must exist before reading.",
+"correctCode": "try:\n with open(\"data.txt\", \"r\") as f:\n print(f.read())\nexcept FileNotFoundError:\n print(\"File not found.\")",
+"answerIncludes": ["try", "FileNotFoundError"]
+},
+{
+"id": 15,
+"level": "Hard",
+"riddle": "I check your age, but fail to see your years right.",
+"buggyCode": "age = input(\"Enter age: \")\nif age >= 18:\n print(\"Adult\")",
+"hint": "All inputs are strings by default.",
+"correctCode": "age = int(input(\"Enter age: \"))\nif age >= 18:\n print(\"Adult\")",
+"answerIncludes": ["int(input"]
+}
+]
