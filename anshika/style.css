@@ -1,0 +1,98 @@
+body {
+margin: 0;
+padding: 0;
+background: linear-gradient(135deg, #0e0220, #1d0033);
+font-family: ‘Orbitron’, sans-serif;
+color: #fff;
+display: flex;
+justify-content: center;
+align-items: center;
+min-height: 100vh;
+}
+
+.container {
+max-width: 800px;
+padding: 2rem;
+background: rgba(255, 255, 255, 0.02);
+border: 2px solid #9105d0;
+border-radius: 16px;
+box-shadow: 0 0 40px rgba(204, 0, 255, 0.5);
+}
+
+.level-title {
+text-align: center;
+font-size: 1.8rem;
+color: #e6d4ff;
+border: 2px solid #9105d0;
+padding: 1rem;
+border-radius: 10px;
+margin-bottom: 2rem;
+}
+
+.riddle-box {
+background-color: #170032;
+padding: 1.5rem;
+border-radius: 12px;
+border: 2px solid #5e1fe7;
+}
+
+.riddle-heading {
+font-size: 1.2rem;
+margin-bottom: 0.5rem;
+color: #ff91f6;
+}
+
+.riddle-text {
+font-size: 1rem;
+margin-bottom: 1rem;
+color: #f1e5ff;
+}
+
+.code-block {
+background: #0e011d;
+color: #39ffb5;
+font-family: monospace;
+padding: 1rem;
+border-radius: 8px;
+margin-bottom: 1.5rem;
+font-size: 0.95rem;
+overflow-x: auto;
+}
+
+.buttons {
+display: flex;
+justify-content: space-between;
+gap: 10px;
+}
+
+.btn {
+flex: 1;
+padding: 0.8rem 1rem;
+border: none;
+border-radius: 8px;
+font-size: 1rem;
+cursor: pointer;
+transition: all 0.2s ease;
+font-family: ‘Orbitron’, sans-serif;
+}
+
+.submit {
+background: linear-gradient(to right, #a74fd8, #e448d7);
+color: #fff;
+}
+
+.reset {
+background-color: #2f1359;
+color: #fff;
+border: 1px solid #a77efc;
+}
+
+.hint {
+background-color: #1b1b3c;
+color: #ffd8ff;
+border: 1px solid #8f62c3;
+}
+
+.btn:hover {
+opacity: 0.85;
+}
