@@ -1,69 +1,67 @@
-📂 Unstuck – A Riddle-Based Debugger Game
+About the Project 🚀
+Unstuck: Debug the Code! is an interactive web-based game designed to help aspiring developers, and even seasoned ones, sharpen their debugging skills and deepen their understanding of fundamental JavaScript concepts. Players are presented with a riddle describing a programming concept and a "buggy" code snippet. The challenge is to fix the code to match a specific expectedOutput.
 
-🧠 Description
-Unstuck is a fun and challenging web-based puzzle game where debugging meets brain teasers! Each level presents you with a riddle and a snippet of buggy code. Your task is to interpret the riddle, analyze the code, and fix the bug to move forward.
+This application aims to provide a fun and engaging learning experience, allowing users to actively experiment with code and immediately see the results of their changes.
 
-Think of it as Wordle meets LeetCode — but for bugs. Ideal for coders who love solving mysteries through logic and creativity.
+Features ✨
+Interactive Riddles: Engaging puzzles that test your knowledge of JavaScript concepts. 🧩
 
-🚀 Features
+Live Code Editor: Powered by CodeMirror, offering syntax highlighting and line numbers for a comfortable coding experience. 🧑‍💻
 
-🧩 Riddle + Code per level — fun storytelling + debugging
+Real-time Feedback: Instantly know if your solution is correct or what output your "fixed" code produced. ✅❌
 
-🛠 Built-in code editor (with syntax highlighting)
+Progress Tracking: A progress bar visually indicates how many levels you've completed. 📈
 
-✅ Real-time feedback on submitted fixes
+Level Progression: Advance through increasingly challenging levels. ➡️
 
-🧪 Test case validation for code corrections
+Reset Functionality: Easily revert the code editor to its original "buggy" state for a fresh start on a problem. ↩️
 
-⏱️ Timer and XP system (future enhancement)
+Backend Validation: A robust Node.js/Express server evaluates user-submitted code in a sandboxed environment. 🛡️
 
-🧠 Hints available after wrong attempts
+Technical Stack 🛠️
+Frontend:
 
-📸 Preview (optional)
-You can add a screenshot or GIF demo here once the UI is ready.
+HTML5: Structure of the web application. 📄
 
-🛠️ Tech Stack
+CSS3 (Tailwind CSS): Styling and responsive design. 🎨
 
-Frontend: HTML, CSS, JavaScript, CodeMirror (code editor)
+JavaScript (ES6+): Client-side logic, interactivity, and communication with the backend. ⚡
 
-Backend: Python + Flask
+CodeMirror: In-browser code editor with syntax highlighting. ✍️
 
-Database: JSON (for levels), or SQLite/Firebase (optional for user data)
+Backend:
 
-Optional: Docker (for deployment)
+Node.js: JavaScript runtime environment. 🟢
 
-📁 Project Structure
+Express.js: Web framework for building the API endpoints. 🌐
 
-unstuck/
-├── backend/
-│ └── app.py # Flask server for game logic
-│ └── levels.json # All riddle + code levels
-├── frontend/
-│ ├── index.html # Main game UI
-│ ├── style.css # Basic styling
-│ ├── game.js # Handles gameplay, submissions
-│ └── editor.js # CodeMirror setup
-└── README.md
+body-parser: Middleware for parsing JSON request bodies. 📦
 
-🧩 Sample Level Format
+cors: Middleware for enabling Cross-Origin Resource Sharing. 🔗
 
-{
-"id": 1,
-"riddle": "I’m used before I’m born. Who am I?",
-"code": "print(name)\nname = 'Alex'",
-"expected_fix": "name = 'Alex'\nprint(name)"
-}
+fs (Node.js built-in): For reading the riddles.json file. 📁
 
-🧪 How it Works
+vm (Node.js built-in): For sandboxed code execution, crucial for safely evaluating user-submitted JavaScript. 🔒
 
-User picks a level
+Data:
 
-Reads the riddle and inspects the buggy code
+riddles.json: JSON file storing all the riddle data, buggy code, and expected outputs for each level. 📊
 
-Fixes it in the code editor
+How to Play 🎮
+Launch the Application:
 
-Presses "Submit"
+Follow the "Installation & Setup" instructions below to get the backend server running and open index.html in your browser. 🌐
 
-Backend checks if it matches expected solution or passes hidden tests
+Read the Riddle: At the top of the app, you'll see a riddle describing a programming concept and the Expected output your code should produce. 🤔
 
-If correct → Next level. If wrong → hint / retry
+Inspect the Code: The code editor will contain a JavaScript snippet that currently has a "bug" or doesn't produce the expectedOutput. 🐛
+
+Debug the Code: Modify the code in the editor to make it produce the expected output. Pay close attention to the riddle for clues! 🛠️
+
+Submit Your Solution: Click the "Submit" button to send your code to the server for evaluation. 🚀
+
+Review Feedback: The Result Box will tell you if your solution is Correct! or Wrong Output.. 👍👎
+
+Next Level: If correct, a "Next Level" button will appear. Click it to proceed to the next challenge! ▶️
+
+Reset: If you get stuck or want to start over on a level, click the "Reset" button to revert the code to its original state. 🔄
