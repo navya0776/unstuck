@@ -77,6 +77,12 @@ Next Level: If correct, a "Next Level" button will appear. Click it to proceed t
 
 Reset: If you get stuck or want to start over on a level, click the "Reset" button to revert the code to its original state. 🔄
 
+*Dependencies:*
+
+`express`: A fast, unopinionated, minimalist web framework for Node.js.
+`cors`: A Node.js package for providing a Connect/Express middleware that can be used to enable Cross-Origin Resource Sharing (CORS) with various options.
+`body-parser`: A Node.js middleware for parsing incoming request bodies in a middleware before your handlers, available under the req.body property.
+
 *Future Enhancements*✨
 
 User Accounts & Progress: Implement user logins and save progress across sessions.
