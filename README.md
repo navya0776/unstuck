@@ -3,7 +3,9 @@ Unstuck: Debug the Code! is an interactive web-based game designed to help aspir
 
 This application aims to provide a fun and engaging learning experience, allowing users to actively experiment with code and immediately see the results of their changes.
 
+
 Features ✨
+
 Interactive Riddles: Engaging puzzles that test your knowledge of JavaScript concepts. 🧩
 
 Live Code Editor: Powered by CodeMirror, offering syntax highlighting and line numbers for a comfortable coding experience. 🧑‍💻
@@ -18,7 +20,10 @@ Reset Functionality: Easily revert the code editor to its original "buggy" state
 
 Backend Validation: A robust Node.js/Express server evaluates user-submitted code in a sandboxed environment. 🛡️
 
+
+
 Technical Stack 🛠️
+
 Frontend:
 
 HTML5: Structure of the web application. 📄
@@ -46,6 +51,8 @@ vm (Node.js built-in): For sandboxed code execution, crucial for safely evaluati
 Data:
 
 riddles.json: JSON file storing all the riddle data, buggy code, and expected outputs for each level. 📊
+
+
 
 How to Play 🎮
 Launch the Application:
