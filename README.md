@@ -76,3 +76,15 @@ Review Feedback: The Result Box will tell you if your solution is Correct! or Wr
 Next Level: If correct, a "Next Level" button will appear. Click it to proceed to the next challenge! ▶️
 
 Reset: If you get stuck or want to start over on a level, click the "Reset" button to revert the code to its original state. 🔄
+
+*Future Enhancements*✨
+
+User Accounts & Progress: Implement user logins and save progress across sessions.
+
+Expanded Challenges: Add many more levels covering diverse JavaScript concepts and debugging scenarios.
+
+Hint System: Introduce optional hints to guide users when they get stuck.
+
+Difficulty Levels: Categorize riddles by difficulty (e.g., beginner, intermediate, advanced).
+
+Interactive Explanations: Provide brief explanations of concepts after a correct solution.
