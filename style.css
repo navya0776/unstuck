@@ -1,0 +1,163 @@
+body {
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #fff; /* Default text color to white */
+}
+
+.glow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Make sure it covers the whole viewport */
+}
+
+.container {
+  max-width: 700px; /* Adjusted max-width to be a bit smaller */
+  padding: 30px;
+  background-color: #1E103B; /* Darker purple inner background */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(218, 71, 255, 0.3); /* Subtle inner shadow */
+  position: relative; /* For the glow effect using pseudo-elements */
+  overflow: hidden; /* Clip the pseudo-elements */
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #DA47FF, #FF6B93, #DA47FF, #FF6B93);
+  z-index: -1;
+  border-radius: 15px;
+  filter: blur(10px);
+  opacity: 0.8;
+}
+
+.container::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, #DA47FF, #FF6B93);
+  z-index: -1;
+  border-radius: 15px;
+}
+
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.progress-container {
+  width: 100%;
+  background-color: #382259; /* Darker progress bar background */
+  border-radius: 8px;
+  margin-bottom: 25px;
+  overflow: hidden;
+}
+
+.progress-bar {
+  height: 25px;
+  width: 0%;
+  background-color: #A657FF; /* Pink/Purple progress bar fill */
+  border-radius: 8px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  transition: width 0.4s ease-in-out;
+}
+
+#riddleBox {
+  background-color: #2A184B; /* Darker riddle box background */
+  padding:5px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #4D307A; /* Subtle border */
+}
+#level{
+  text-align:center;
+  font-size:1.75rem;
+  margin-top:0px;
+  margin-bottom:15px;
+}
+#riddleText {
+  font-size: 1.3rem;
+  color: #EEE;
+  white-space: pre-line;
+  margin-bottom:0px;
+  text-align:center;
+}
+#output{
+  font-size:1rem;
+  color:#eee;
+  white-space:pre-line;
+  font-weight: lighter;
+  margin-top:4px;
+  margin-bottom: 5px;
+  text-align:center;
+}
+
+.CodeMirror {
+  height: 250px; /* Adjust height as needed */
+  border: 1px solid #4D307A;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  /* Centering the buttons */
+  justify-content: center;
+}
+
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  transition: background-color 0.3s ease;
+}
+
+#submitBtn {
+  background-color: #DA47FF; /* Pink Submit button */
+}
+
+#submitBtn:hover {
+  background-color: #C039D9;
+}
+
+#resetBtn { /* Removed #hintBtn from this selector */
+  background-color: #4A307A; /* Dark purple Reset button */
+}
+
+#resetBtn:hover { /* Removed #hintBtn from this selector */
+  background-color: #382259;
+}
+
+#nextBtn {
+  background-color: #6B48B3; /* Slightly different purple for Next */
+}
+
+#nextBtn:hover {
+  background-color: #543A8F;
+}
+
+#resultBox {
+  margin-top: 20px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #2A184B;
+  border: 1px solid #4D307A;
+  color: #EEE;
+}
