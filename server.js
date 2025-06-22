@@ -3,10 +3,10 @@ const fs = require("fs");
 const path = require("path");
 const bodyParser = require("body-parser");
 const cors = require('cors');
-app.use(cors());
 
+const app = express(); 
+app.use(cors());       
 
-const app = express();
 const PORT = process.env.PORT || 5000;
 
 

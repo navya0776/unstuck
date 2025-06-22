@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Unstuck - Riddle Game</title>
+
+  <!-- Orbitron Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
+
+  <!-- CodeMirror CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css" />
+
+  <!-- Your CSS -->
+  <link rel="stylesheet" href="mainPage.css" />
+</head>
+<body>
+   
+
+  <div class="container">
+    <h1 id="level" class="level-title">LEVEL 1 - THE BUG HUNTER</h1>
+    <div id="progress-container">
+    <div id="progress-bar"></div>
+    </div>
+
+    <div class="riddle-box">
+      <h2 class="riddle-heading">🧩 Riddle</h2>
+      <p id="riddleText" class="riddle-text">Riddle will load here...</p>
+
+      <!-- CodeMirror will attach to this -->
+      <textarea id="codeEditor" rows="10" cols="60" placeholder="Fix the code here..."></textarea>
+
+      <!-- Expected Output Box -->
+      <pre id="output" class="code-block">Expected output will show here...</pre>
+
+      <!-- Feedback after submitting -->
+      <p id="resultBox"></p>
+
+      <!-- Buttons -->
+      <div class="buttons">
+        <button id="submitBtn" class="btn submit">SUBMIT</button>
+        <button id="resetBtn" class="btn reset">RESET</button>
+        <button onclick="showHint()" class="btn hint">💡 HINT</button>
+        <button id="nextBtn" class="btn submit" style="display:none;">NEXT</button>
+      </div>
+
+      <!-- Progress Bar -->
+      <div class="progress-bar-container">
+        <div id="progressBar" class="progress-bar"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CodeMirror JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+
+  <!-- Your Game Logic -->
+  <script src="app.js"></script>
+
+  <!-- Optional: Hint Function -->
+
+</body>
+</html>
