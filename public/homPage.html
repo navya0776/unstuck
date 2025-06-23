@@ -62,11 +62,36 @@ One bug at a time — glory awaits.</p>
         <div class="name">Unstuck Debugger</div>
         <div class="tagline">Debug Your Way To Glory
         </div>
-        <link><div class="start"><button onclick="location.href='mainPage.html'">Start Now</button></div>
-        </main>
+        <div class="domain-select">
+  <label for="domain"> Choose your domain:</label>
+  <select id="domain">
+    <option disabled selected>Choose</option>
+    <option value="javascript">JavaScript</option>
+  </select>
+</div>
+        <div class="start">
+          <button id="easyBtn" onclick="startGameLink('easy')">
+            <span>Easy</span>
+            <span>Levels 1-5</span>
+        </button>
+        <button id="intermediateBtn" onclick="startGameLink('intermediate')">
+          <span>Intermediate</span>
+          <span>Levels 6-10</span>
+      </button>
+      <button id="difficultBtn" onclick="startGameLink('difficult')">
+        <span>Difficult</span>
+        <span>Levels 6-10</span>
+    </button>
+      </div>
+            </main>
     </hero>
+    <script>
+      function startGameLink(difficulty) {
+
+          window.location.href = `index.html?difficulty=${difficulty}`;
+      }
+  </script>
     
     
 </body>
-
 </html>
