@@ -1,117 +1,163 @@
 body {
-margin: 0;
-padding: 0;
-background: linear-gradient(135deg, #0e0220, #1d0033);
-font-family: ‘Orbitron’, sans-serif;
-color: #fff;
-display: flex;
-justify-content: center;
-align-items: center;
-min-height: 100vh;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 20px;
+  color: #fff; /* Default text color to white */
 }
 
-#progress-container {
-  width: 100%;
-  background-color: #2c1a4d;
-  height: 20px;
-  border-radius: 10px;
-  overflow: hidden;
-  margin-bottom: 20px;
-  border: 2px solid #9105d0;
+.glow-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh; /* Make sure it covers the whole viewport */
 }
-
-#progress-bar {
-  height: 100%;
-  width: 0%;
-  background: linear-gradient(to right, #a74fd8, #e448d7);
-  transition: width 0.5s ease-in-out;
-  border-radius: 10px;
-}
-
 
 .container {
-max-width: 800px;
-padding: 2rem;
-background: rgba(255, 255, 255, 0.02);
-border: 2px solid #9105d0;
-border-radius: 16px;
-box-shadow: 0 0 40px rgba(204, 0, 255, 0.5);
+  max-width: 700px; /* Adjusted max-width to be a bit smaller */
+  padding: 30px;
+  background-color: #1E103B; /* Darker purple inner background */
+  border-radius: 15px;
+  box-shadow: 0 0 20px rgba(218, 71, 255, 0.3); /* Subtle inner shadow */
+  position: relative; /* For the glow effect using pseudo-elements */
+  overflow: hidden; /* Clip the pseudo-elements */
 }
 
-.level-title {
-text-align: center;
-font-size: 1.8rem;
-color: #e6d4ff;
-border: 2px solid #9105d0;
-padding: 1rem;
-border-radius: 10px;
-margin-bottom: 2rem;
+.container::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #DA47FF, #FF6B93, #DA47FF, #FF6B93);
+  z-index: -1;
+  border-radius: 15px;
+  filter: blur(10px);
+  opacity: 0.8;
 }
 
-.riddle-box {
-background-color: #170032;
-padding: 1.5rem;
-border-radius: 12px;
-border: 2px solid #5e1fe7;
+.container::after {
+  content: '';
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background: linear-gradient(45deg, #DA47FF, #FF6B93);
+  z-index: -1;
+  border-radius: 15px;
 }
 
-.riddle-heading {
-font-size: 1.2rem;
-margin-bottom: 0.5rem;
-color: #ff91f6;
+h1 {
+  color: #fff;
+  text-align: center;
+  margin-bottom: 25px;
 }
 
-.riddle-text {
-font-size: 1rem;
-margin-bottom: 1rem;
-color: #f1e5ff;
+.progress-container {
+  width: 100%;
+  background-color: #382259; /* Darker progress bar background */
+  border-radius: 8px;
+  margin-bottom: 25px;
+  overflow: hidden;
 }
 
-.code-block {
-background: #0e011d;
-color: #39ffb5;
-font-family: monospace;
-padding: 1rem;
-border-radius: 8px;
-margin-bottom: 1.5rem;
-font-size: 0.95rem;
-overflow-x: auto;
+.progress-bar {
+  height: 25px;
+  width: 0%;
+  background-color: #A657FF; /* Pink/Purple progress bar fill */
+  border-radius: 8px;
+  line-height: 25px;
+  text-align: center;
+  color: #fff;
+  transition: width 0.4s ease-in-out;
 }
 
-.buttons {
-display: flex;
-justify-content: space-between;
-gap: 10px;
+#riddleBox {
+  background-color: #2A184B; /* Darker riddle box background */
+  padding:5px 10px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #4D307A; /* Subtle border */
+}
+#level{
+  text-align:center;
+  font-size:1.75rem;
+  margin-top:0px;
+  margin-bottom:15px;
+}
+#riddleText {
+  font-size: 1.3rem;
+  color: #EEE;
+  white-space: pre-line;
+  margin-bottom:0px;
+  text-align:center;
+}
+#output{
+  font-size:1rem;
+  color:#eee;
+  white-space:pre-line;
+  font-weight: lighter;
+  margin-top:4px;
+  margin-bottom: 5px;
+  text-align:center;
 }
 
-.btn {
-flex: 1;
-padding: 0.8rem 1rem;
-border: none;
-border-radius: 8px;
-font-size: 1rem;
-cursor: pointer;
-transition: all 0.2s ease;
-font-family: ‘Orbitron’, sans-serif;
+.CodeMirror {
+  height: 250px; /* Adjust height as needed */
+  border: 1px solid #4D307A;
+  border-radius: 10px;
+  margin-bottom: 25px;
 }
 
-.submit {
-background: linear-gradient(to right, #a74fd8, #e448d7);
-color: #fff;
+.controls {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+  /* Centering the buttons */
+  justify-content: center;
 }
 
-.reset {
-background-color: #2f1359;
-color: #fff;
-border: 1px solid #a77efc;
+button {
+  padding: 12px 25px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  color: #fff;
+  transition: background-color 0.3s ease;
 }
 
-.hint {
-background-color: #1b1b3c;
-color: #ffd8ff;
-border: 1px solid #8f62c3;
+#submitBtn {
+  background-color: #DA47FF; /* Pink Submit button */
 }
 
-.btn:hover {
-opacity: 0.85;
+#submitBtn:hover {
+  background-color: #C039D9;
+}
+
+#resetBtn { /* Removed #hintBtn from this selector */
+  background-color: #4A307A; /* Dark purple Reset button */
+}
+
+#resetBtn:hover { /* Removed #hintBtn from this selector */
+  background-color: #382259;
+}
+
+#nextBtn {
+  background-color: #6B48B3; /* Slightly different purple for Next */
+}
+
+#nextBtn:hover {
+  background-color: #543A8F;
+}
+
+#resultBox {
+  margin-top: 20px;
+  font-weight: bold;
+  padding: 15px;
+  border-radius: 8px;
+  background-color: #2A184B;
+  border: 1px solid #4D307A;
+  color: #EEE;
 }
