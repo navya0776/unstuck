@@ -1,108 +1,108 @@
- [
+[
     {
-        "id": 1,
-        "riddle": "I am defined but never remembered. Who am I?",
-        "buggyCode": "function greet() {\n  const name = 'Alex';\n  return 'Hello!';\n}",
-        "expectedOutput": "Hello, Alex!",
-        "level": "Easy"
-
+      "id": 1,
+      "riddle": "I'm a silent stopper, often forgotten. Without me, your lines get knotted. What am I?",
+      "buggyCode": "let message = \"Hello World\"\nconsole.log(message)",
+      "expectedOutput": "Hello World",
+      "level": "Easy"
     },
     {
-        "id": 2,
-        "riddle": "I'm a collection of items, ordered and indexed, yet I am not a string. What am I?",
-        "buggyCode": "const data = 'apple,banana,orange';\nconsole.log(data[1]);",
-        "expectedOutput": "a",
-        "level": "Easy"
+      "id": 2,
+      "riddle": "I'm named, but not yet born, within my block I'm torn. Before I'm given value, a silent error's drawn. What am I?",
+      "buggyCode": "function displayValue() {\n  console.log(myVar);\n  let myVar = 5;\n}\ndisplayValue();",
+      "expectedOutput": "5",
+      "level": "Easy"
     },
     {
-        "id": 3,
-        "riddle": "I repeat a block of code until a condition is met. What am I?",
-        "buggyCode": "let i = 0;\nwhile (i > 3) {\n  console.log(i);\n  i++;\n}",
-        "expectedOutput": "\n0\n1\n2",
-        "level": "Easy"
+      "id": 3,
+      "riddle": "I join texts, a simple task, but a missing piece will make your string unmask. What am I?",
+      "buggyCode": "let firstName = \"John\";\nlet lastName = \"Doe\";\nconsole.log(firstName lastName);",
+      "expectedOutput": "JohnDoe",
+      "level": "Easy"
     },
     {
-        "id": 4,
-        "riddle": "I control the flow of execution, deciding what code runs based on a condition. What am I?",
-        "buggyCode": "const age = 17;\nif (age >= 18) {\n  console.log('Adult');\n}  if (age < 18) {\n  console.log('Minor');\n}",
-        "expectedOutput": "Minor",
-        "level": "Easy"
+      "id": 4,
+      "riddle": "I'm defined, I have a name, but if you don't call me right, I won't play your game. What am I?",
+      "buggyCode": "function calculateSum(a, b) {\n  return a + b;\n}\nconsole.log(calculateSum 10, 5);",
+      "expectedOutput": "15",
+      "level": "Easy"
     },
     {
-        "id": 5,
-        "riddle": "I hold a value, but I'm not a number or a string. When I'm not true, I'm false. What am I?",
-        "buggyCode": "let isValid = 0;\nif (isValid) {\n  console.log('Valid!');\n} else {\n  console.log('Not valid!');\n}",
-        "expectedOutput": "Not valid!",
-        "level": "Easy"
+      "id": 5,
+      "riddle": "I hold many items, neatly aligned. But if you ask for one beyond my kind, an empty void you'll find. What am I?",
+      "buggyCode": "const colors = [\"red\", \"green\", \"blue\"];\nconsole.log(colors[3]);",
+      "expectedOutput": "blue",
+      "level": "Easy"
     },
     {
-        "id": 6,
-        "riddle": "I can be `true` or `false`, and I help you make decisions in your code. What am I?",
-        "buggyCode": "const isRaining = 'yes';\nif (isRaining) {\n  console.log('Take an umbrella');\n} else {\n  console.log('Enjoy the sun');\n}",
-        "expectedOutput": "Take an umbrella",
-        "level": "Medium"
+      "id": 6,
+      "riddle": "My loop counts, but with a slight misstep. One less iteration, a value I've kept. What am I?",
+      "buggyCode": "for (let i = 1; i < 5; i++) {\n  console.log(i);\n}",
+      "expectedOutput": "1\n2\n3\n4\n5",
+      "level": "Intermediate"
     },
     {
-        "id": 7,
-        "riddle": "I am a strict comparison, I care about both value and type. What am I?",
-        "buggyCode": "console.log(5 == '5');",
-        "expectedOutput": "true",
-        "level": "Medium"
+      "id": 7,
+      "riddle": "In my method, I refer to myself, or so I assume. But if I lose my link, I fall into gloom. What am I?",
+      "buggyCode": "const person = {\n  name: 'Alice',\n  greet: function() {\n    console.log('Hello, ' + this.name);\n  }\n};\nsetTimeout(person.greet, 100);",
+      "expectedOutput": "Hello, Alice",
+      "level": "Intermediate"
     },
     {
-        "id": 8,
-        "riddle": "I represent the absence of value, not zero or an empty string. What am I?",
-        "buggyCode": "let value;\nconsole.log(value + 5);",
-        "expectedOutput": "NaN",
-        "level": "Medium"
+      "id": 8,
+      "riddle": "Two values, seemingly the same, but my strict gaze reveals a different game. What am I?",
+      "buggyCode": "console.log(10 == '10');",
+      "expectedOutput": "false",
+      "level": "Intermediate"
     },
     {
-        "id": 9,
-        "riddle": "I connect two or more strings together. What am I?",
-        "buggyCode": "const firstName = 'John';\nconst lastName = 'Doe';\nconsole.log(firstName - lastName);",
-        "expectedOutput": "NaN",
-        "level": "Medium"
+      "id": 9,
+      "riddle": "I transform arrays, creating new views. But if I don't give back, empty voids ensue. What am I?",
+      "buggyCode": "const nums = [1, 2, 3];\nconst squared = nums.map(num => {\n  num * num;\n});\nconsole.log(squared);",
+      "expectedOutput": "[1, 4, 9]",
+      "level": "Intermediate"
     },
     {
-        "id": 10,
-        "riddle": "I can group related data and functions, but I'm not a class. What am I?",
-        "buggyCode": "const car = {\n  brand: 'Toyota',\n  start: function() \n    console.log('Engine started');\n  }n};\ncar.start();\ncar.stop();",
-        "expectedOutput": "Engine started",
-        "level": "Medium"
+      "id": 10,
+      "riddle": "I'm built for instant use, a self-starter true. But if I lack my final touch, my execution's through. What am I?",
+      "buggyCode": "(function() {\n  console.log(\"I ran immediately!\");\n});()",
+      "expectedOutput": "I ran immediately!",
+      "level": "Intermediate"
     },
     {
-        "id": 11,
-        "riddle": "I can be called upon, I can return a value, but I am not a variable. What am I?",
-        "buggyCode": "const add = (a, b) => {\n  return a + b;\n};\nconsole.log(add(5, '10'));",
-        "expectedOutput": "510",
-        "level": "Difficult"
+      "id": 11,
+      "riddle": "I capture variables, a powerful art. But in a loop's embrace, I might play a tricky part. What am I?",
+      "buggyCode": "const funcs = [];\nfor (var i = 0; i < 3; i++) {\n  funcs.push(function() {\n    console.log(i);\n  });\n}\nfuncs[0]();\nfuncs[1]();\nfuncs[2]();",
+      "expectedOutput": "0\n1\n2",
+      "level": "Difficult"
     },
     {
-        "id": 12,
-        "riddle": "I iterate over elements in an array, but I'm not a `for` loop. What am I?",
-        "buggyCode": "const numbers = [1, 2, 3];\nnumbers.forEach(num => {\n  console.log(num * 2);\n});",
-        "expectedOutput": "2\n4\n6",
-        "level": "Difficult"
+      "id": 12,
+      "riddle": "I delay execution, a waiting game. But in a fast loop, my timing's to blame. What am I?",
+      "buggyCode": "for (var i = 0; i < 3; i++) {\n  setTimeout(function() {\n    console.log(i);\n  }, 10);\n}",
+      "expectedOutput": "0\n1\n2",
+      "level": "Difficult"
     },
     {
-        "id": 13,
-        "riddle": "I'm a declaration that lives throughout the entire script, even before I'm defined. What am I?",
-        "buggyCode": "console.log(x);\nvar x = 10;",
-        "expectedOutput": "undefined",
-        "level": "Difficult"
+      "id": 13,
+      "riddle": "I handle async tasks, in sequence I flow. But if a promise isn't passed, my chain won't grow. What am I?",
+      "buggyCode": "function fetchUser() {\n  return Promise.resolve({ id: 1, name: 'Bugs' });\n}\n\nfetchUser()\n  .then(user => {\n    console.log('User fetched:', user.name);\n    Promise.resolve('User data processed'); // Missing return\n  })\n  .then(message => {\n    console.log('Message:', message);\n  });",
+      "expectedOutput": "User fetched: Bugs\nMessage: User data processed",
+      "level": "Difficult"
     },
     {
-        "id": 14,
-        "riddle": "I can create new objects from a blueprint. What am I?",
-        "buggyCode": "class Animal {\n  constructor(name) {\n    this.name = name;\n  }\n}\nconst dog = new Animal('Buddy');\nconsole.log(dog.type);\n",
-        "expectedOutput": "undefined",
-        "level": "Difficult"
+      "id": 14,
+      "riddle": "I pick my parts, from objects I pull. But if a nested path's missing, my value falls null. What am I?",
+      "buggyCode": "const data = { config: { timeout: 1000, maxRetries: 3 } };\nconst { config: { retryLimit } } = data;\nconsole.log(retryLimit);",
+      "expectedOutput": "3",
+      "level": "Difficult"
     },
     {
-        "id": 15,
-        "riddle": "I pause execution until an asynchronous operation completes. What am I?",
-        "buggyCode": "function fetchData() {\n  return new Promise(resolve => setTimeout(() => resolve('Data fetched'), 100));\n}\nasync function processData() {\n  const result = fetchData();\n  console.log(result);\n}\nprocessData();",
-        "expectedOutput": "Promise { <pending> }",
-        "level": "Difficult"
+      "id": 15,
+      "riddle": "I check ownership, a property's true abode. But if I don't use the right method, false results are showed. What am I?",
+      "buggyCode": "const animal = { type: 'mammal' };\nconst dog = Object.create(animal);\ndog.name = 'Buddy';\n\nfor (let prop in dog) {\n  if (dog[prop] !== undefined) { // Incorrect check for own properties\n    console.log(prop);\n  }\n}",
+      "expectedOutput": "name",
+      "level": "Difficult"
     }
-]
+  ]
+  
